@@ -28,20 +28,20 @@
            <div class="card ">
              <div class="card-content">
                <div class="row">
-                <form class="col s12">
+                <form class="col s12" >
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="first_name" type="text" class="validate" required>
+                      <input  id="first_name" type="text" class="validate" required>
                       <label for="first_name">First Name</label>
                     </div>
                     <div class="input-field col s12">
-                      <input id="last_name" type="text" class="validate" required>
+                      <input  id="last_name" type="text" class="validate" required>
                       <label for="last_name">Last Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12 active">
-                      <input  id="dob" type="date" class="validate" required>
+                      <input id="dob" type="date" class="validate" required>
                       <label for="date">DOB</label>
                     </div>
                   </div>
@@ -59,25 +59,25 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="email" type="email" class="validate" required>
+                      <input  id="email" type="email" class="validate" required>
                       <label for="email">Email</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="gender" type="text" class="validate" pattern="M||F" required>
+                      <input  id="gender" type="text" class="validate" pattern="M||F" required>
                       <label for="gender">Gender(M/F)</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="language" type="text" class="validate" pattern="[A-z]{2}" required>
+                      <input  id="language" type="text" class="validate" pattern="[A-z]{2}" required>
                       <label for="language">Language(Ar)</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="country" type="text" class="validate" pattern="[A-Z]{2}" required>
+                      <input  id="country" type="text" class="validate" pattern="[A-Z]{2}" required>
                       <label for="country">Prefcountry</label>
                     </div>
                   </div>
@@ -133,12 +133,17 @@
         "prefcountry" : prefferedCountry,
         "storeid" : "20342",
         "createdon" : new Date($.now())
-        }
+      };
+        console.log(JSON.stringify(body));
 
-        $.ajax({type: "POST",url: 'https://dxbuatco.kojamjoom.com:7007/ords/kojws/koj/regcustomer',data: JSON.stringify(body),success: function(result) {
-          alert(result.message);
-          }
-        });
+
+    $.ajax({type: "POST",url: 'https://dxbuatco.kojamjoom.com:7007/ords/kojws/koj/regcustomer',data: JSON.stringify(body),success: function(result) {
+    console.log(result);
+    alert(result);
+    alert(result.message);
+      },
+      contentType: 'application/json'
+    });
 
     }
 
